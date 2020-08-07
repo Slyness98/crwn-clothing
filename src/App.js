@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
-
 import { createStructuredSelector } from 'reselect';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument} from './firebase/firebase.utils';
 
 import CheckoutPage from './pages/checkout/checkout.component';
 import HomePage from './pages/homepage/homepage.component';
@@ -33,8 +32,7 @@ class App extends React.Component {
               ...snapshot.data()
           });
         });
-      }
-      else{ setCurrentUser(userAuth);  /*this.setState({currentUser: userAuth})*/}
+      } else{setCurrentUser(userAuth)}
     });
   }
 
